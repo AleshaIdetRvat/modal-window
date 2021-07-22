@@ -1,0 +1,9 @@
+.block {
+  width: 70vw;
+  margin: 0 auto;
+}
+
+.header__title {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
