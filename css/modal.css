@@ -92,7 +92,7 @@
 }
 
 .modal.open .modal__body {
-  top: 40vh;
+  top: 50vh;
   z-index: 100;
 }
 
@@ -109,24 +109,4 @@
 .modal.hidden .modal__body {
   top: -100%;
   z-index: 100;
-}
-
-body {
-  background-color: #1f1f1f;
-  color: #c2c2c2;
-}
-
-.wrapper {
-  font-family: "Trebuchet MS", sans-serif;
-  position: relative;
-}
-
-.block {
-  width: 70vw;
-  margin: 0 auto;
-}
-
-.header__title {
-  font-weight: 700;
-  font-size: 1.5rem;
 }

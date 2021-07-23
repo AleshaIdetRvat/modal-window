@@ -1,0 +1,125 @@
+@mixin mx-position($top: 0, $right: 0, $bottom: 0, $left: 0) {
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+.modal {
+    color: rgb(31, 31, 31);
+    &__overlay {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+        //@include mx-position();
+        left: 0;
+        top: 0;
+        right: 0;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.61);
+
+        transition: 0.2s;
+    }
+
+    &__body {
+        position: fixed;
+        top: -100%;
+        left: 50vw;
+
+        transform: translate(-50%, -50%);
+        z-index: -1;
+
+        padding: 10px;
+        max-width: 600px;
+        background-color: rgb(233, 247, 253);
+        border-radius: 12px;
+        margin: 0 auto;
+
+        transition: top 0.2s ease;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__title {
+        margin: 0;
+        font-size: 25px;
+        line-height: 25px;
+    }
+
+    &__btn-ok,
+    &__btn-cancel,
+    &__btn-close {
+        cursor: pointer;
+        border-radius: 10px;
+        border: 0;
+        background-color: rgba(255, 255, 255, 0.836);
+        font-weight: 700;
+        padding: 10px 20px;
+        font-size: 15px;
+        transition: 0.2s;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+        &:hover {
+            transform: translate(0, -5px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.096);
+        }
+
+        &:active {
+            transform: translate(0, 0);
+            opacity: 0.6;
+            //transform: scale(90%);
+        }
+    }
+
+    &__btn-close {
+        font-size: 35px;
+        padding: 6px 10px 8px 10px;
+        color: whitesmoke;
+        background-color: rgba(223, 56, 56, 0.938);
+        line-height: 24px;
+    }
+
+    &__btn-ok {
+    }
+
+    &__btn-cancel {
+    }
+
+    &__content {
+    }
+
+    &__footer {
+    }
+}
+
+.modal.open {
+    height: 100%;
+    width: 100%;
+    .modal__overlay {
+        opacity: 1;
+        z-index: 90;
+    }
+
+    .modal__body {
+        top: 40vh;
+        z-index: 100;
+    }
+}
+
+.modal.hidden {
+    .modal__overlay,
+    .modal__body {
+        opacity: 1;
+    }
+    .modal__overlay {
+        opacity: 0;
+        z-index: 90;
+    }
+
+    .modal__body {
+        top: -100%;
+        z-index: 100;
+    }
+}

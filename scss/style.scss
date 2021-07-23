@@ -1,4 +1,13 @@
+@import "modal";
+
+body {
+    background-color: rgb(31, 31, 31);
+    color: rgb(194, 194, 194);
+}
+
 .wrapper {
+    font-family: "Trebuchet MS", sans-serif;
+    position: relative;
 }
 .block {
     width: 70vw;
