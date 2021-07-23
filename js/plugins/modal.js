@@ -54,7 +54,6 @@ $.modal = function (options) {
         document.body.getElementsByClassName('modal__btn-cancel')[0],
     ].map(el => el.addEventListener('click', _close))
 
-
     return {
         open() {
             _open()
@@ -62,6 +61,15 @@ $.modal = function (options) {
         close() {
             _close()
         },
-        destroy() { }
+        destroy() {
+            [
+                document.body.getElementsByClassName('modal__overlay')[0],
+                document.body.getElementsByClassName('modal__btn-close')[0],
+                document.body.getElementsByClassName('modal__btn-ok')[0],
+                document.body.getElementsByClassName('modal__btn-cancel')[0],
+            ].map(el => el.removeEventListener('click', _close))
+
+            document.body.querySelector('.wrapper').removeChild($modal)
+        }
     }
 }
