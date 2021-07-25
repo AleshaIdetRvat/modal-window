@@ -1,5 +1,1 @@
 const $ = {};
-(() => {
-    console.log('dkfsdf');
-
-})();
